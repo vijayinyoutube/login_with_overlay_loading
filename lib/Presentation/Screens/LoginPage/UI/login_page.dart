@@ -54,9 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is AuthError) {
-              buildErrorLayout();
+               buildErrorLayout();
             } else if (state is AuthLoaded) {
-              Navigator.of(context).pushNamed('/dashboard',arguments: state.username);
+              Navigator.of(context)
+                  .pushNamed('/dashboard', arguments: state.username);
             }
           },
           builder: (context, state) {
