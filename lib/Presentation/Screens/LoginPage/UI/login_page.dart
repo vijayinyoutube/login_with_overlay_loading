@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: BlocConsumer<AuthBloc, AuthState>(
-          listener: (context, state)  {
+          listener: (context, state) {
             if (state is AuthError) {
               buildErrorLayout();
             } else if (state is AuthLoaded) {
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           builder: (context, state) {
             if (state is AuthLoading) {
-              return const LoadingWidget();
+              return LoadingWidget(child: buildInitialInput());
             } else {
               return buildInitialInput();
             }
