@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:overlay_loading/Presentation/Components/spacers.dart';
 
 import '../../../../business_logic/bloc/Dashboard/dashboard_bloc.dart';
 import '../../../Components/loader.dart';
@@ -23,12 +24,26 @@ class Dashboard extends StatelessWidget {
           if (state is DashboardLoading) {
             return const LoadingWidget();
           } else {
-            return initialLayout();
+            return initialLayout(context);
           }
         },
       ),
     );
   }
 
-  Widget initialLayout() => Center(child: Text("hai $username!"));
+  Widget initialLayout(BuildContext context) => Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("hai $username!"),
+            const HeightSpacer(myHeight: 10.00),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("Back"))
+          ],
+        ),
+      );
 }

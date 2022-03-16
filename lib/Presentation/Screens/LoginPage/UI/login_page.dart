@@ -52,10 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: BlocConsumer<AuthBloc, AuthState>(
-          listener: (context, state) {
+          listener: (context, state)  {
             if (state is AuthError) {
-               buildErrorLayout();
+              buildErrorLayout();
             } else if (state is AuthLoaded) {
+              clearTextData();
               Navigator.of(context)
                   .pushNamed('/dashboard', arguments: state.username);
             }
@@ -105,4 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
           content: Text('Please enter username/password!'),
         ),
       );
+
+  clearTextData() {
+    userName.clear();
+    password.clear();
+  }
 }
