@@ -19,7 +19,11 @@ class Dashboard extends StatelessWidget {
         title: Text(title),
       ),
       body: BlocConsumer<DashboardBloc, DashboardState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is DashboardNav) {
+            Navigator.pop(context);
+          }
+        },
         builder: (context, state) {
           if (state is DashboardLoading) {
             return LoadingWidget(
@@ -45,7 +49,7 @@ class Dashboard extends StatelessWidget {
             const HeightSpacer(myHeight: 10.00),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  BlocProvider.of<DashboardBloc>(context).add(NavBack());
                 },
                 child: const Text("Back"))
           ],
