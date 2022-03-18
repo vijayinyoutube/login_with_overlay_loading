@@ -22,7 +22,7 @@ class Dashboard extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           if (state is DashboardLoading) {
-            return const LoadingWidget();
+            return  LoadingWidget(child: initialLayout(context),);
           } else {
             return initialLayout(context);
           }
