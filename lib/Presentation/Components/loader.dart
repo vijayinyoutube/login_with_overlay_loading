@@ -20,7 +20,7 @@ class LoadingWidget extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            color: Colors.grey.withOpacity(0.5),
+            color: Colors.grey.withOpacity(0.55),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [

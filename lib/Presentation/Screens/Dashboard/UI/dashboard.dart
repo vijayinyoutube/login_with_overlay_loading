@@ -22,7 +22,9 @@ class Dashboard extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           if (state is DashboardLoading) {
-            return  LoadingWidget(child: initialLayout(context),);
+            return LoadingWidget(
+              child: initialLayout(context),
+            );
           } else {
             return initialLayout(context);
           }
@@ -36,7 +38,10 @@ class Dashboard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("hai $username!"),
+            Text(
+              "hai $username!",
+              style: const TextStyle(fontSize: 50.00),
+            ),
             const HeightSpacer(myHeight: 10.00),
             ElevatedButton(
                 onPressed: () {
