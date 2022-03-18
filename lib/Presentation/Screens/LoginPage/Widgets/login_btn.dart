@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:overlay_loading/business_logic/bloc/LoginAuth/auth_bloc.dart';
 
+import '../../../Constants/constants.dart';
+
 class LoginBtn extends StatelessWidget {
   const LoginBtn(
       {Key? key,
@@ -17,7 +19,7 @@ class LoginBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50.00),
+      padding: kHPadding,
       child: OutlinedButton(
         focusNode: focusNode,
         style: OutlinedButton.styleFrom(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../Constants/constants.dart';
+
 class InputField extends StatelessWidget {
   const InputField({
     Key? key,
@@ -17,7 +19,7 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50.00),
+      padding: kHPadding,
       child: TextFormField(
         obscureText: label == "Password" ? true : false,
         controller: textController,
@@ -27,13 +29,11 @@ class InputField extends StatelessWidget {
         },
         decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.blue),
-              borderRadius: BorderRadius.circular(5.5),
-            ),
+                borderSide: const BorderSide(color: Colors.blue),
+                borderRadius: kBorderRadius),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.blue),
-              borderRadius: BorderRadius.circular(5.5),
-            ),
+                borderSide: const BorderSide(color: Colors.blue),
+                borderRadius: kBorderRadius),
             hintStyle: const TextStyle(color: Colors.blue),
             filled: true,
             fillColor: Colors.transparent,

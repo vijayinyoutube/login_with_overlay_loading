@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:overlay_loading/Presentation/Constants/constants.dart';
 
 import '../../../Components/spacers.dart';
 
@@ -21,7 +22,7 @@ class SocialSignIn extends StatelessWidget {
         width: 192,
         height: 40,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.5),
+          borderRadius: kBorderRadius,
           color: btnColor,
         ),
         child: Row(
