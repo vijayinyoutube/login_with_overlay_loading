@@ -18,7 +18,7 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => BlocProvider<AuthBloc>.value(
             value: _authBloc,
-            child: const MyHomePage(title: "Age Calculator"),
+            child: const MyHomePage(title: "Login page with overlay"),
           ),
         );
 

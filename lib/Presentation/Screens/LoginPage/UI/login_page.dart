@@ -4,7 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../business_logic/bloc/LoginAuth/auth_bloc.dart';
 import '../../../Components/loader.dart';
 import '../../../Components/spacers.dart';
-import '../Widgets/button.dart';
+import '../Widgets/login_btn.dart';
+import '../Widgets/social_signin.dart';
 import '../Widgets/text_data_widget.dart';
 import '../Widgets/text_form_field.dart';
 
@@ -73,31 +74,35 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget buildInitialInput() => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const TextData(message: "User"),
-          const HeightSpacer(myHeight: 50),
-          InputField(
-            focusNode: usernameFocus,
-            textController: userName,
-            label: "Username",
-            icons: const Icon(Icons.person, color: Colors.blue),
-          ),
-          const HeightSpacer(myHeight: 20),
-          InputField(
-            focusNode: passwordFocus,
-            textController: password,
-            label: "Password",
-            icons: const Icon(Icons.lock, color: Colors.blue),
-          ),
-          const HeightSpacer(myHeight: 20),
-          ButtonWidget(
-            focusNode: loginBtnFocus,
-            userName: userName,
-            password: password,
-          ),
-        ],
+  Widget buildInitialInput() => SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const TextData(message: "User"),
+            const HeightSpacer(myHeight: 50),
+            InputField(
+              focusNode: usernameFocus,
+              textController: userName,
+              label: "Username",
+              icons: const Icon(Icons.person, color: Colors.blue),
+            ),
+            const HeightSpacer(myHeight: 20),
+            InputField(
+              focusNode: passwordFocus,
+              textController: password,
+              label: "Password",
+              icons: const Icon(Icons.lock, color: Colors.blue),
+            ),
+            const HeightSpacer(myHeight: 20),
+            LoginBtn(
+              focusNode: loginBtnFocus,
+              userName: userName,
+              password: password,
+            ),
+            const HeightSpacer(myHeight: 30),
+            const SocialSignIn(),
+          ],
+        ),
       );
 
   ScaffoldFeatureController buildErrorLayout() =>

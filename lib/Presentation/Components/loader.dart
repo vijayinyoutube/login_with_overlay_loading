@@ -13,6 +13,7 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
         child,
         Center(
@@ -21,12 +22,13 @@ class LoadingWidget extends StatelessWidget {
             height: double.infinity,
             color: Colors.grey.withOpacity(0.5),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  CircularProgressIndicator(),
-                  WidthSpacer(myWidth: 25.50),
-                  Text("Loading..."),
-                ]),
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                CircularProgressIndicator(),
+                WidthSpacer(myWidth: 25.50),
+                Text("Loading..."),
+              ],
+            ),
           ),
         ),
       ],
