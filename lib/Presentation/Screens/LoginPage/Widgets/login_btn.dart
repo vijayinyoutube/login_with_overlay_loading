@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:overlay_loading/business_logic/bloc/LoginAuth/auth_bloc.dart';
 
-import '../../../Constants/constants.dart';
+import '../../../Declarations/Constants/constants.dart';
 
 class LoginBtn extends StatelessWidget {
   const LoginBtn(
