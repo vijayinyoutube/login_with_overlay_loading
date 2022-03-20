@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:overlay_loading/Presentation/Constants/constants.dart';
 
 import '../../../Components/spacers.dart';
+import '../../../Declarations/Constants/constants.dart';
 
 class SocialSignIn extends StatelessWidget {
   const SocialSignIn({Key? key}) : super(key: key);
